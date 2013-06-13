@@ -1,10 +1,10 @@
-object Form1: TForm1
+object frmLogin: TfrmLogin
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'CERES - Login'
-  ClientHeight = 168
+  ClientHeight = 157
   ClientWidth = 393
   Color = clMoneyGreen
   Font.Charset = DEFAULT_CHARSET
@@ -1007,7 +1007,7 @@ object Form1: TForm1
       TabOrder = 1
     end
     object BitBtn1: TBitBtn
-      Left = 132
+      Left = 128
       Top = 96
       Width = 75
       Height = 25
@@ -1056,6 +1056,31 @@ object Form1: TForm1
         16145B5C0C015408FFFFFFFF07AF9E56555D63625BA6F6FFFFFFFFFFFFF60707
         AEF608A3A3F6FFFFFFFFFFFFFFFFFFFF08FFFFF608F6FFFFFFFF}
       TabOrder = 2
+      OnClick = BitBtn1Click
     end
+  end
+  object ADConnection1: TADConnection
+    Params.Strings = (
+      'Database=ceres'
+      'User_Name=carvalho0201'
+      'Password=030824duke'
+      'Server=SERV_ARQUIVOS'
+      'DriverID=MSSQL')
+    LoginPrompt = False
+    Left = 24
+    Top = 208
+  end
+  object Qr_Login: TADQuery
+    Connection = ADConnection1
+    Left = 96
+    Top = 208
+  end
+  object ADGUIxWaitCursor1: TADGUIxWaitCursor
+    Left = 176
+    Top = 208
+  end
+  object ADPhysMSSQLDriverLink1: TADPhysMSSQLDriverLink
+    Left = 264
+    Top = 208
   end
 end
